@@ -11,7 +11,58 @@ header{
   text-align:center;
 }
 
+nav{
+  margin-top:10px;
+}
+
+nav a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:#00d8ff;
+}
+
 section{
   padding:60px;
   text-align:center;
+}
+
+#hero{
+  height:60vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(#000,#222);
+}
+
+.skill-box{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.project{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:#222;
+  padding:20px 40px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.1);
+  background:#00d8ff;
+  color:black;
 }
