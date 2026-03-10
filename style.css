@@ -1,3 +1,7 @@
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family: Arial;
   margin:0;
@@ -65,4 +69,10 @@ section{
   transform:scale(1.1);
   background:#00d8ff;
   color:black;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:black;
 }
