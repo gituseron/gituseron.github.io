@@ -1,12 +1,11 @@
 /* 기본 설정 */
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
-    background: #0f0f0f; /* 더 깊은 블랙 */
+    background: #0f0f0f;
     color: #e0e0e0;
     line-height: 1.6;
 }
@@ -21,182 +20,83 @@ header {
     top: 0;
     z-index: 1000;
 }
-
-header h1 {
-    font-size: 1.2rem;
-    margin: 0;
-    letter-spacing: 2px;
-}
-
-nav {
-    margin-top: 15px;
-}
-
-nav a {
-    color: #888;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #00d8ff;
-}
+header h1 { font-size: 1.2rem; margin: 0; letter-spacing: 2px; }
+nav { margin-top: 15px; }
+nav a { color: #888; margin: 0 15px; text-decoration: none; font-weight: 500; transition: 0.3s; }
+nav a:hover { color: #00d8ff; }
 
 /* 히로 섹션 */
 #hero {
-    height: 70vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
     text-align: center;
 }
-
-#hero h2 {
-    font-size: 2.5rem;
-    line-height: 1.4;
-}
-
-#hero h2 span {
-    color: #00d8ff;
-}
+#hero h2 { font-size: 2.5rem; line-height: 1.4; }
+#hero h2 span { color: #00d8ff; }
 
 /* 섹션 공통 */
-section {
-    padding: 100px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    position: relative;
-    display: inline-block;
-}
-
+section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+h2 { font-size: 2rem; margin-bottom: 40px; position: relative; display: inline-block; }
 h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: #00d8ff;
+    content: ''; position: absolute; bottom: -10px; left: 50%;
+    transform: translateX(-50%); width: 50px; height: 3px; background: #00d8ff;
 }
 
 /* 스킬 섹션 */
-.skill-box {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+.skill-box { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.skill-card { background: #1a1a1a; padding: 8px 20px; border-radius: 50px; border: 1px solid #333; font-size: 0.85rem; }
 
-.skill-card {
-    background: #1a1a1a;
-    padding: 10px 25px;
-    border-radius: 50px;
-    border: 1px solid #333;
-    font-size: 0.9rem;
-}
+/* 프로젝트 리스트 (중요 수정 부분) */
+.project-list { display: flex; flex-direction: column; gap: 100px; margin-top: 60px; }
 
-/* 프로젝트 그리드 및 카드 */
-.project-grid {
+.project-item {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.project-card {
-    background: #1a1a1a;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.4s;
-    border: 1px solid #222;
-}
-
-.project-card a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.video-wrapper {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    background: #000;
-}
-
-.video-wrapper video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
-}
-
-.card-body {
-    padding: 25px;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
     text-align: left;
 }
 
-.tags {
-    margin-bottom: 12px;
+/* 영상 영역 */
+.video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: transform 0.4s ease, border-color 0.4s ease;
 }
-
-.tag {
-    font-size: 0.75rem;
-    background: rgba(0, 216, 255, 0.1);
-    color: #00d8ff;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin-right: 5px;
-}
-
-.card-body h3 {
-    margin: 10px 0;
-    font-size: 1.4rem;
-}
-
-.card-body p {
-    color: #aaa;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-}
-
-.more-btn {
-    color: #00d8ff;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-/* 카드 호버 효과 */
-.project-card:hover {
-    transform: translateY(-10px);
+.video-frame:hover {
+    transform: translateY(-5px);
     border-color: #00d8ff;
-    box-shadow: 0 10px 30px rgba(0, 216, 255, 0.1);
 }
+.video-frame video { width: 100%; height: 100%; object-fit: cover; }
 
-.project-card:hover video {
-    transform: scale(1.1);
+/* 설명 영역 */
+.project-info h3 { font-size: 1.8rem; margin: 10px 0; color: #fff; }
+.description { color: #aaa; margin-bottom: 20px; }
+.tags { margin-bottom: 15px; }
+.tag { font-size: 0.75rem; background: rgba(0, 216, 255, 0.1); color: #00d8ff; padding: 4px 10px; border-radius: 4px; margin-right: 5px; }
+
+.features-list { list-style: none; padding: 0; margin: 20px 0; color: #bbb; }
+.features-list li { margin-bottom: 10px; font-size: 0.9rem; }
+
+/* 링크 버튼 */
+.project-links { display: flex; gap: 20px; align-items: center; margin-top: 30px; }
+.btn-detail { color: #00d8ff; text-decoration: none; font-weight: bold; border-bottom: 1px solid transparent; transition: 0.3s; }
+.btn-detail:hover { border-bottom: 1px solid #00d8ff; }
+.btn-icon { font-size: 0.8rem; color: #777; text-decoration: none; padding: 5px 12px; border: 1px solid #333; border-radius: 4px; transition: 0.3s; }
+.btn-icon:hover { background: #222; color: #fff; }
+
+/* 반응형 모바일 */
+@media (max-width: 968px) {
+    .project-item { grid-template-columns: 1fr; gap: 30px; }
+    #hero h2 { font-size: 1.8rem; }
 }
 
 /* 푸터 */
-footer {
-    padding: 50px;
-    border-top: 1px solid #222;
-    text-align: center;
-    color: #666;
-    font-size: 0.8rem;
-}
-
-/* 반응형 */
-@media (max-width: 768px) {
-    #hero h2 { font-size: 1.8rem; }
-    .project-grid { grid-template-columns: 1fr; }
-}
+footer { padding: 40px; border-top: 1px solid #222; text-align: center; color: #555; font-size: 0.8rem; }
