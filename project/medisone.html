@@ -13,6 +13,7 @@
       max-width: 900px;
       margin: 0 auto;
       line-height: 1.8;
+      font-family: &quot;Noto Sans KR&quot;, sans-serif;
     "
   >
     <a
@@ -41,7 +42,8 @@
       <p>
         의료용 디스플레이 제조 공정의 고도화된 품질 관리를 위해 **자재 입고부터
         생산, 품질 검사, 최종 출하 및 사후 추적**까지 전 과정을 디지털화하고
-        통합 관리하는 MES(Manufacturing Execution System) 솔루션입니다.
+        통합 관리하는 MES 솔루션입니다. 특히 의료기기 품질경영시스템(ISO 13485)
+        기준을 참고하여 **데이터의 무결성**을 확보하는 데 집중했습니다.
       </p>
     </section>
 
@@ -101,54 +103,141 @@
       </div>
     </section>
 
-    <section style="margin-top: 40px">
-      <h3>Key Module & Features</h3>
-      <ul style="list-style: none; padding-left: 0">
-        <li style="margin-bottom: 15px">
-          <strong> 자재 및 재고 관리 (Inventory)</strong><br />부품 입고 시
-          바코드 연동을 통한 실시간 재고 파악 및 불량 자재 선별
-        </li>
-        <li style="margin-bottom: 15px">
-          <strong> 실시간 생산 공정 모니터링 (Production)</strong><br />작업
-          지시서 하달 및 공정별 진행률(WIP) 실시간 가시화
-        </li>
-        <li style="margin-bottom: 15px">
-          <strong> 품질 관리 및 추적 (QA & Traceability)</strong><br />검사
-          데이터 자동 수집 및 시리얼 번호 기반의 출하 후 이력 추적(History
-          Tracking) 기능
-        </li>
-        <li style="margin-bottom: 15px">
-          <strong> 데이터 시각화 (Dashboard)</strong><br />생산 효율성(OEE) 및
-          불량률 통계 대시보드 구현
-        </li>
-      </ul>
+    <section style="margin-top: 50px">
+      <h3
+        style="
+          color: #00d8ff;
+          border-left: 4px solid #00d8ff;
+          padding-left: 15px;
+        "
+      >
+        01. 공정 분석 및 시스템 모델링
+      </h3>
+      <p style="font-size: 0.9rem; color: #888; margin-bottom: 20px">
+        * 본 단계는 실제 제조 도메인을 분석하여 시스템 데이터로 모델링하는
+        과정에 집중했습니다.
+      </p>
+
+      <div style="display: grid; gap: 15px">
+        <div
+          style="
+            background: #1a1a1a;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #333;
+          "
+        >
+          <strong>STEP 01. 입고 및 표면 처리:</strong> 원자재 입고 확인 및
+          Unique Lot ID(바코드) 부여
+        </div>
+        <div
+          style="
+            background: #1a1a1a;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #00d8ff;
+          "
+        >
+          <strong>STEP 02. 광학 본딩 (핵심):</strong> 레진 도포량 및 경화 시간
+          임계값(기준치) 모니터링 관리
+        </div>
+        <div
+          style="
+            background: #1a1a1a;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #333;
+          "
+        >
+          <strong>STEP 03. 제품 조립:</strong> 작업지시서 기반 공정 진행 및 BOM
+          데이터에 따른 자재 실시간 차감
+        </div>
+        <div
+          style="
+            background: #1a1a1a;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #333;
+          "
+        >
+          <strong>STEP 04. 품질 검사 (QA):</strong> 의료기기 표준(DICOM) 기반
+          합격/불합격 판정 자동화
+        </div>
+        <div
+          style="
+            background: #1a1a1a;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 3px solid #333;
+          "
+        >
+          <strong>STEP 05. 출하 및 보고:</strong> 최종 공정 이력 데이터 확정 및
+          결과 보고서 생성
+        </div>
+      </div>
     </section>
 
-    <section
-      style="
-        margin-top: 40px;
-        background: #1a1a1a;
-        padding: 20px;
-        border-radius: 10px;
-      "
-    >
-      <h3>💡 Implementation Focus</h3>
-      <p>
-        의료기기 품질경영시스템(ISO 13485) 기준을 참고하여 **데이터의 무결성**을
-        확보하는 데 집중했습니다. 특히 대규모 공정 데이터를 효율적으로 처리하기
-        위해 데이터베이스 정규화와 인덱싱 최적화를 진행했습니다.
-      </p>
+    <section style="margin-top: 50px">
+      <h3
+        style="
+          color: #00d8ff;
+          border-left: 4px solid #00d8ff;
+          padding-left: 15px;
+        "
+      >
+        02. 역할 기반 권한 설계 (RBAC)
+      </h3>
+      <div
+        style="
+          margin-top: 20px;
+          border: 1px solid #333;
+          border-radius: 10px;
+          overflow: hidden;
+        "
+      >
+        <div style="display: flex; border-bottom: 1px solid #333">
+          <div
+            style="
+              width: 120px;
+              background: #222;
+              padding: 15px;
+              font-weight: bold;
+            "
+          >
+            관리자
+          </div>
+          <div style="padding: 15px; color: #ccc">
+            사원 권한 부여, 공정 기준 정보 설정, 생산 통계 대시보드 조회
+          </div>
+        </div>
+        <div style="display: flex">
+          <div
+            style="
+              width: 120px;
+              background: #222;
+              padding: 15px;
+              font-weight: bold;
+            "
+          >
+            작업자
+          </div>
+          <div style="padding: 15px; color: #ccc">
+            실시간 공정 보고, 불량 발생 등록(코드), 개인 작업 지시서 확인
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer
       style="
-        margin-top: 60px;
+        margin-top: 80px;
         text-align: center;
         color: #555;
         font-size: 0.9rem;
+        padding-bottom: 40px;
       "
     >
-      © 2026 Medis-ONE Development Project.
+      © 2026 Medis-ONE Development Project Analysis.
     </footer>
   </body>
 </html>
